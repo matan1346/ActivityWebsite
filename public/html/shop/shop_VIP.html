@@ -1,0 +1,57 @@
+<div id="VIPBuyContainer">
+    <div id="VIPBuyWrapper">
+        <h2>Purchase VIP Grade</h2>
+        <form action="shop/{{shop_Type}}" method="POST">
+            <table id="VIPBuyTable">
+                <tr>
+                    <td><label for="myColor"><a href="http://html-color-codes.info/" target="_blank">HTML Colors:</a></label></td>
+                    <td style="width: 170px;">#<input type="text" name="myColor" id="myColor" size="4" maxlength="6" placeholder="000" autocomplete="off" /> <span id="PreviwColor"> Color </span></td>
+                </tr>
+                <tr id="PreviewRow">
+                    {% if CharactersData is not empty %}
+                    <td>
+                        <select id="CharactersVipSelect">
+                        {% for CharacterCID,CharacterName in CharactersData %}
+                            <option value='{{CharacterName["ColorName"]|raw}}'>{{CharacterName['RegularName']}}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td id="VIPPreview">{{FirstCharacter|raw}}</td>
+                    {% else %}
+                    <td>Example:</td>
+                    <td id="VIPPreview">Test</td>
+                    {% endif%}
+                </tr>
+                <tr>
+                    <td colspan="2">Features:</td>
+                </tr>
+                <tr>
+                    <td colspan="2">- You Can <span id="VIPFeatures">Enter Full Rooms!</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">- You Can <span id="VIPFeatures">Announce Every 30 Minutes!</span> (like admin wall)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">- You Get <span id="VIPFeatures">Unique Color Name!</span> (without ^ tag)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">- You Get <span id="VIPFeatures">Huge Discounts!</span></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Notice: The Vip Takes Place at All of Your Characters! </td>
+                </tr>
+            </table>
+            <div id="HoldingButtons">
+                <div class="buttons">
+                    <button type="submit" class="positive" name="Sub{{shop_Type}}">
+                        <img src="public/img/apply.png" alt="Apply" />
+                        Purchase VIP
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+
+#MangaeClansContainer
+{
+    width: 100%;
+    height: 100%;
+}
+
+#MangaeClansContainer #ManageWrapper
+{
+    padding: 20px;
+    background-color: rgba(65, 65, 65, 0.67);/*#414141;*/
+    height: 100%;
+}
+
+
+#MangaeClansContainer #ManageWrapper #ManageTitle
+{
+    position: absolute;
+    font-size: 25px;
+    color: #FFF;
+    margin-top: -10px;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData
+{
+    position: absolute;
+    margin-top: 50px;
+}
+
+
+#MangaeClansContainer #ManageWrapper #ManageData #myClans
+{
+    margin-left: -1px;
+}
+
+
+#MangaeClansContainer #ManageWrapper #ManageData #myClans #CurrentClan
+{
+    position: absolute;
+    margin-top: -27px;
+    margin-left: 4px;
+    font-family: verdana;
+    font-size: 10pt;
+}
+
+
+#MangaeClansContainer #ManageWrapper #ManageData #SetRoles
+{
+    border-right: 1px solid #FFF;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanManageMessage
+{
+    position: absolute;
+    top: -60px;
+    left: 160px;
+    width: 490px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 12px;
+    color: #CBF3FF;
+    text-shadow: 0px 0px 10px #FFF;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates
+{
+    /*
+    font-family: verdana;
+    font-size: 10pt;
+    margin-top: -80px;
+    margin-left: 110px;
+    line-height: 45px;
+    position: absolute;
+    width: 540px;
+    display: inline-block;
+    */
+    /*
+    font-family: verdana;
+    font-size: 10pt;
+    top: 0;
+    margin-left: 10px;
+    left: 100px;
+    line-height: 45px;
+    position: absolute;
+    width: 540px;
+    height: 312px;
+    display: inline-block;
+    */
+    font-family: verdana;
+    font-size: 10pt;
+    top: 0;
+    left: 86px;
+    line-height: 45px;
+    position: absolute;
+    width: 565px;
+    height: 360px;
+    display: inline-block;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates #NabigateMatePage
+{
+    width: 100%;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates #NabigateMatePage .PageMateNum
+{
+    text-align: center;
+    display: inline;
+    margin-left: 50px;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates #NabigateMatePage .PageMateNum:hover
+{
+    cursor: pointer;
+    color: red;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates
+{
+    left: 20px;
+    position: absolute;
+    margin-left: 32px;
+    margin: auto auto auto auto;
+}
+
+.SelectedMate
+{
+    width: auto !important;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates .ClanMateData
+{
+    overflow: hidden;
+    padding-right: 5px;
+    display: inline-block;
+    
+    line-height: 22px;
+    padding-left: 5px;
+    
+    width: 115px;
+    height: 66px;
+    /*height: 70px;*/
+    box-shadow: 0px 0px 80px #000;/*#D1D0D0;/*#888;*/
+    /*border: 1px solid #727070;/*white;*/
+    border: 2px solid rgba(0, 112, 255, 0.2);/*rgba(255, 0, 0, 0.2);/*rgba(62, 185, 243, 0.34);/*rgba(108, 214, 255, 0.34);*/
+    
+    border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+}
+
+/*
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates .ClanMateData:hover
+{
+    box-shadow: 0px 0px 0px #000;
+}
+*/
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates .ClanMateData .MateName a
+{
+    /*font-weight: bold;*/
+    /*color: /*#00B8FF white !important;/*orange;
+    text-shadow: #000 0.1em 0.1em 0.2em;
+    /*margin-left: 2px;*/
+    text-shadow: #636363 0.1em 0.1em 0.2em;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates .ClanMateData .MateRole .MemberIcon
+{
+    position: absolute;
+    margin-top: 0px;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates .ClanMateData .MateRole span
+{
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 18px;
+    color: #FFA500;
+    text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
+#MangaeClansContainer #ManageWrapper #ManageData #ClanMates .GroupMates .ClanMateData .MarkMate
+{
+    height: 22px;
+    margin-top: 20px;
+}
+

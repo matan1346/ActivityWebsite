@@ -1,0 +1,47 @@
+
+#RegisterContainer
+{
+    width: 100%;
+    height: auto;
+    margin: -35px auto auto auto;
+}
+
+#RegisterContainer #RegisterTable
+{
+    margin: 37px auto auto auto;
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+    border-collapse: collapse;
+    /*font-family: cursive;
+    font-size: 8pt;*/
+    font-family: verdana;
+    font-size: 7pt;
+}
+
+#RegisterContainer #RegisterTable tr
+{
+    
+}
+
+#RegisterContainer #RegisterTable tr .RegisterField
+{
+    width: 98px;
+}
+
+
+#RegisterContainer #RegisterTable tr td label
+{
+    margin-left: 10px;/*120px;*/
+}
+
+#RegisterContainer #RegisterTable tr td ul
+{
+    font-family: Verdana;
+    font-size: 7pt;
+}
+
+#RegisterContainer #RegisterTable #recaptcha_table
+{
+    margin-left: 1px !important;
+}

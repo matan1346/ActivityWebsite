@@ -1,0 +1,24 @@
+                    </div>
+                    
+                    <div id="RBottom"></div>
+            </div>
+                
+                
+                <div id="ServerImageLogoC"></div>
+            </div>
+            
+            <div id="ServerImageLogoF"></div>
+            <div id="FooterContainer">
+                <div id="Credits">The Website Designed By <a class="CreditTo" href="mailto:BunjiiDesign@gmail.com">Bunjii</a>, Coded &#38; Sliced By <a class="CreditTo" href="mailto:matanfxp@hotmail.co.il">Activity</a></div>
+                <div id="ServerNameF">{{ServerData['ServerName']}}</div>
+                <div id="ServerDetails">
+                    <div class="ServerDetail {{ServerData['Status']}}Status"><span>Server:</span> <img src="public/img/icons/{{ServerData['Status']}}.ico" class="status_icon" title="{{ServerData['Status']|capitalize}} Icon" alt="Server {{ServerData['Status']|capitalize}} Icon" />{{ServerData['Status']|capitalize}}</div> | 
+                    <div class="ServerDetail {{ServerData['Status']}}Status"><span>Active Players:</span> {{ServerData['CurrPlayer']~'/'~ServerData['MaxPlayer']}}</div> | 
+                    <div class="ServerDetail {{ServerData['Players']['Status']}}Status"><span>Characters:</span> {{ServerData['Players']['Amount']}}</div> | 
+                    <div class="ServerDetail {{ServerData['Clans']['Status']}}Status"><span>Clans:</span> {{ServerData['Clans']['Amount']}}</div>
+                </div>
+            </div>
+        
+        </div>
+    </body>
+</html>

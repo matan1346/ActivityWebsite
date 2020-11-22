@@ -1,0 +1,94 @@
+{% include 'Layout/header.html' %}
+    <div id="GetBackToRanking"><a href="clans">&#60;- Clans Ranking</a></div>
+    <div id="ClanInfoContainer">
+        <div id="ClanInfoWrapper">
+        {% if ClanDetails['Name'] is not empty %}
+            <div class="RolesData">
+                <div class="RoleData" title="Leader Icon"><img src="public/img/icons/leader.ico" alt="Leader Icon" /> - Leader</div>
+                <div class="RoleData" title="Administrator Icon"><img src="public/img/icons/administrator.ico" alt="Administrator Icon" /> - Administrator</div>
+                <div class="RoleData" title="Member Icon"><img src="public/img/icons/member.ico" alt="Member Icon" /> - Member</div>
+            </div>
+            <div id="ClanTitle"><img src="{{BASE_CLAN_EMBLEM_DIR~ClanDetails['EmblemUrl']}}" width="60" height="60" title="{{ClanDetails['Name']['RegularName']}}`s Logo" alt="{{ClanDetails['Name']['RegularName']}}`s Logo"/><div>{{ClanDetails['Name']['ColorName']|raw}}`s Profile</div></div>
+            <div id="ClanDetailsContainer">
+                <table class="ClanDetails">
+                    <tr>
+                        <td>Leader:</td>
+                        <td><a href="player/{{ClanDetails['MasterName']['RegularName']}}" class="player_link">{{ClanDetails['MasterName']['ColorName']|raw}}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Members:</td>
+                        <td>{{ClanDetails['NumMembers']}}</td>
+                    </tr>
+                 </table>
+                <table class="ClanDetails">
+                    <tr>
+                        <td>Rank:</td>
+                        <td>{{ClanDetails['Rank']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Points:</td>
+                        <td>{{ClanDetails['Points']}}</td>
+                    </tr>
+                 </table>
+                <table class="ClanDetails">
+                    <tr>
+                        <td>Wins:</td>
+                        <td>{{ClanDetails['Wins']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Loses:</td>
+                        <td>{{ClanDetails['Losses']}}</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="ClanMatesContainer">
+                <div id="TopMatesTitle">Top {{top_mates}} Members</div>
+                <table class="ClanMatesTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Member</th>
+                            <!--<th>Role</th>/-->
+                            <th>Points</th>
+                            <th>Joined at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row, Member in MatesData %}
+                        <tr>
+                            <td>{{Member['Count']}}</td>
+                            <td><div class="MemberIcon"><img src="public/img/icons/{{Member['Role']}}.ico" alt="{{Member['Role']}} Icon" title="{{Member['Role']}} Icon" /> <a href="player/{{Member['MemberName']['RegularName']}}" class="player_link">{{Member['MemberName']['ColorName']|raw}}</a></div></td>
+                            <!--<td><div class="MemberIcon" title="{{Member['Role']}} Icon"><img src="public/img/icons/{{Member['Role']}}.ico" alt="{{Member['Role']}} Icon" /></div></td>/-->
+                            <td>{{Member['ContPoint']}}</td>
+                            <td>{{Member['RegDate']}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% if Start_Page_Navigate != End_Page_Navigate %}
+                <div id="HoldingNavigatePage">
+                    <div id="wrapperNavigatePages">
+                    {% if  Curr_Page_Navigate > Start_Page_Navigate %}
+                    <div class="PageNumber" title="Previous Page"><a href="clan/{{ClanDetails['Name']['RegularName']}}/{{Curr_Page_Navigate-1}}">Prev</a></div>
+                    {% endif %}
+                    {% for i in Start_Page_Navigate..End_Page_Navigate %}
+                        {% if i == Curr_Page_Navigate %}
+                            <div class="PageNumber" title="Page: {{i}}" style="color: orange !important;">[{{Per_Page*(i-1)+1}}-{{Per_Page+(Per_Page*(i-1))}}]</div>
+                        {% else %}
+                            <div class="PageNumber" title="Page: {{i}}"><a href="clan/{{ClanDetails['Name']['RegularName']}}/{{i}}">[{{Per_Page*(i-1)+1}}-{{Per_Page+(Per_Page*(i-1))}}]</a></div>
+                        {% endif %}
+                    {% endfor %}
+                    {% if  Curr_Page_Navigate < End_Page_Navigate%}
+                    <div class="PageNumber" title="Next Page"><a href="clan/{{ClanDetails['Name']['RegularName']}}/{{Curr_Page_Navigate+1}}">Next</a></div>
+                    {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        {% else %}
+            This Clan does not exist.
+        {% endif %}
+        </div>
+    </div>
+{% include 'Layout/footer.html' %}

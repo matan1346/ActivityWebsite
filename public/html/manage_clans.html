@@ -1,0 +1,69 @@
+{% include 'Layout/header.html' %}
+    <div id="MangaeClansContainer">
+        <div id="ManageWrapper">
+            {% if IsConnected == true %}
+                {% if Clans is not empty %}
+                <div id="ManageTitle">Manage Clans</div>
+                <form action="my_clans" method="POST" name="EditClanMates">
+                    <div id="ManageData">
+                        <div id="myClans">
+                            <div id="CurrentClan"><a class="clan_link" href="{{BASE_CLAN_PROFILE_PATH~Clans[clan_id][0]['Name']['RegularName']}}">{{Clans[clan_id][0]['Name']['ColorName']|raw}}</a></div>
+                            <select id="Clans" name="ClanOption">
+                            {% for clid,clanDetails in Clans %}
+                                <option value="{{clid}}">{{clanDetails[0]['Name']['RegularName']}}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                        <div id="ClanImage"></div>
+                        <div id="SetRoles">
+                            <input type="radio" id="leaderRole" name="role" value="1" {% if RolesState['Leader'] == false %} disabled="disabled" {% endif %} />
+                            <label for="leaderRole" {% if RolesState['Leader'] == false %} style="text-decoration: line-through;color: gray;" {% endif %}><span></span>Leader</label><br />
+                            <input type="radio" id="adminRole" name="role" value="3" {% if RolesState['Administrator'] == false %} disabled="disabled" {% endif %} />
+                            <label for="adminRole" {% if RolesState['Administrator'] == false %} style="text-decoration: line-through;color: gray;" {% endif %}><span></span>Admin</label><br />
+                            <input type="radio" id="memberRole" name="role" value="9" {% if RolesState['Leader'] == false %} disabled="disabled" {% endif %} />
+                            <label for="memberRole" {% if RolesState['Member'] == false %} style="text-decoration: line-through;color: gray;" {% endif %} ><span></span>Member</label><br />
+                            <input type="radio" id="noRole" name="role" value="10" {% if RolesState['Kick'] == false %} disabled="disabled" {% endif %} />
+                            <label for="noRole" {% if RolesState['Kick'] == false %} style="text-decoration: line-through;color: gray;" {% endif %}><span></span>Kick</label><br />
+                            {% if RolesState['Leader'] == true or RolesState['Administrator'] == true or RolesState['Member'] == true or RolesState['Kick'] == true %}
+                            <input type="submit" name="EditClan" class="button_type2" id="SubMates" value="Edit" />
+                            {% endif %}
+                        </div>
+                        <div id="ClanManageMessage">
+                        {{ ClanManageSystemMsg|nl2br }}
+                        </div>
+                        <div id="ClanMates">
+                            <div class="GroupMates">
+                            
+                             {% for key,MateDetails in Mates%}
+                                <div class="ClanMateData" title="Mate: {{MateDetails['Name']['RegularName']}}" style="{{MateDetails['colorName']}}">
+                                    <div class="MateName"><a class="player_link" href="{{BASE_PLAYER_PROFILE_PATH~MateDetails['Name']['RegularName']}}">{{MateDetails['Name']['ColorName']|raw}}</a></div>
+                                    <div class="MateRole"> <div class="MemberIcon" title="{{MateDetails['Role']}} Icon"><img src="public/img/icons/{{MateDetails['Role']}}.ico" alt="{{MateDetails['Role']}} Icon" /></div><span>{{MateDetails['Role']}}</span></div>
+                                    <div class="MarkMate">
+                                    {% if MateDetails['RoleNum'] != -1 %}
+                                        <input type="checkbox" id="MarkMate_{{MateDetails['CID']}}" name="MarkMate[]" value="{{MateDetails['CID']}}" />
+                                        <label for="MarkMate_{{MateDetails['CID']}}"><span></span>Edit</label>
+                                    {% endif %}<br />
+                                    </div>
+                                </div>
+                             {% endfor %}
+                            </div>
+                            <div id="MatesListR" style="display: none;"></div>
+                            <div id="NabigateMatePage">
+                            {% for i in 1..MatesPages %}
+                                <div class="PageMateNum">{{i}}</div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+            </div>
+            {% else %}
+                You are not in any clan.
+            {% endif %}
+        {% else %}
+            Please Login First
+        {% endif %}
+    </div>
+{% include 'Layout/footer.html' %}

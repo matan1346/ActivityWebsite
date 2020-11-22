@@ -1,0 +1,23 @@
+RewriteEngine On
+
+Options -Indexes
+
+RewriteBase /PHP%20Projects/ActivityWebsite/
+RewriteCond %{REQUEST_FILE} !-d
+RewriteCond $(REQUEST_FILE) !-f
+RewriteRule ^([a-zA-Z0-9\_\^]+)$ index.php?page=$1 [L]
+RewriteRule ^([a-zA-Z0-9\_\^]+)/([a-zA-Z0-9\[\]\_\^]+)$ index.php?page=$1&name=$2 [L]
+RewriteRule ^([a-zA-Z0-9\_\^]+)/([a-zA-Z0-9\[\]\_\^]+)/([a-zA-Z0-9\[\]\_\^]+)$ index.php?page=$1&name=$2&page_num=$3
+
+# request is for a directory
+RewriteCond %{REQUEST_FILENAME} -d
+# there is no index.html inside requested directory
+RewriteCond %{REQUEST_FILENAME}/index.php !-f
+# redirect to /404.php
+RewriteRule ^ /PHP%20Projects/ActivityWebsite/404.php [L,R]
+
+
+<Files  ~ "\.(html|txt|rar)$">
+  Order allow,deny
+  Deny from all
+</Files>

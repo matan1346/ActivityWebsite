@@ -1,0 +1,52 @@
+{% include 'Layout/header.html' %}
+    <div id="LoginContainer">
+        <div id="LoginForm">
+            <form action="login" method="POST">
+            
+                <table id="LoginTable">
+                    <tr>
+                        <td><label for="usernameL">Username:</label></td>
+                        <td><input type="text" name="usernameL" id="usernameL" maxlength="20" size="20" placeholder="Enter your username" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,UsernameMes in LoginMessage['Username'] %}
+                                <li>{{UsernameMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="usernameL">Password:</label></td>
+                        <td><input type="password" name="passwordL" id="passwordL" maxlength="20" size="20" placeholder="Enter your password" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,PasswordMes in LoginMessage['Password'] %}
+                                <li>{{PasswordMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <div id="LoginMessage">
+                    <ul>
+                    {% for key,SystemMes in LoginMessage['System'] %}
+                        <li>{{SystemMes}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div id="HoldingButtons">
+                    <div class="buttons">
+                        <button type="submit" class="positive" name="SubLogin">
+                            <img src="public/img/apply.png" alt=""/>
+                            Login
+                        </button>
+                        <button type="reset" class="negative">
+                            <img src="public/img/cross.png" alt=""/>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% include 'Layout/footer.html' %}

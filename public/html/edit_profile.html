@@ -1,0 +1,88 @@
+{% include 'Layout/header.html' %}
+    <div id="EditProfileContainer">
+        
+        <div id="EditProfile">
+            {% if IsConnected == true %}
+            <div class="EditTitle">{{ProfileData['UserID']}}`s Details</div>
+            <form action="edit" method="POST">
+                <table id="EditDetails">
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" name="newName" id="newName" maxlength="20" size="20" autocomplete="off" value="{{ProfileData['Name']}}" placeholder="Your name" /></td>
+                        <td>
+                            <ul>
+                            {% for key,NameMes in EditMessage['Name'] %}
+                                <li>{{NameMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td><input type="text" name="newAge" id="newAge" maxlength="3" size="3" autocomplete="off" value="{{ProfileData['Age']}}" placeholder="Your age" /></td>
+                        <td>
+                            <ul>
+                            {% for key,AgeMes in EditMessage['Age'] %}
+                                <li>{{AgeMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="email" name="newEmail" id="newEmail" maxlength="25" size="20" autocomplete="off" value="{{ProfileData['Email']}}" placeholder="Your email" /></td>
+                        <td>
+                            <ul>
+                            {% for key,EmailMes in EditMessage['Email'] %}
+                                <li>{{EmailMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="newPassword"><input style="margin-left: 0px;" type="checkbox" name="IsNewPassword" id="IsNewPassword" {% if IsCheck == true %} checked {% endif %} /></label><label for="IsNewPassword">New Password:</label></td>
+                        <td><input type="password" name="newPassword" id="newPassword" maxlength="20" size="20" autocomplete="off" placeholder="Your new password" {% if IsCheck != true %} style="display: none;" {% endif %} /></td>
+                        <td>
+                            <ul>
+                            {% for key,newPassMes in EditMessage['newPassword'] %}
+                                <li>{{newPassMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color: #7C1B1B;">You must enter your password for save the data.</td>
+                    </tr>
+                    <tr>
+                        <td>Your Password:</td>
+                        <td><input type="password" name="myPassword" id="MyPssword" maxlength="20" size="20" autocomplete="off" placeholder="Your password" /></td>
+                        <td>
+                            <ul>
+                            {% for key,PassMes in EditMessage['Password'] %}
+                                <li>{{PassMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <div class="buttons">
+                    <button type="submit" class="regular" id="SubEditProfile" name="SubEditProfile">
+                        <img src="public/img/textfield_key.png" alt=""/>
+                        Save Details
+                    </button>
+                </div>
+            </form><br />
+            <div id="EditMessageSystem">
+                <ul>
+                {% for key,SystemMes in EditMessage['System'] %}
+                    <li>{{SystemMes}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+                Please login first.
+            {% endif %}
+        </div>
+    </div>
+{% include 'Layout/footer.html' %}

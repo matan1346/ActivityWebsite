@@ -1,0 +1,501 @@
+
+.MemberIcon a
+{
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 5px
+}
+
+
+.RolesData
+{
+    float: right;
+}
+
+.RolesData .RoleData
+{
+    color: #00A3FF;
+    text-shadow: #BBB 0.1em 0.1em 0.2em;
+}
+
+.RolesData .RoleData:hover
+{
+    color: #976700;
+    cursor: pointer;
+}
+
+
+
+#GetBackToRanking
+{
+    position: absolute;
+    top: 40px;
+    font-family: verdana;
+    font-size: 14pt;
+    margin-left: 10px;
+
+}
+
+#GetBackToRanking a
+{
+    color: orange !important;
+    text-shadow: #000 0.1em 0.1em 0.2em;
+
+}
+
+#SearcRankingData
+{
+    font-family: verdana;
+    position: absolute;
+    top: 35px;
+    font-size: 10pt;
+    margin-left: 400px;
+}
+
+/*
+//Start - Players Ranking Page
+*/
+#playersContainer
+{
+    /*background-color: rgba(134, 202, 255, 0.38);*/
+    width: 668px;
+    height: auto;
+    margin: auto auto auto auto;
+}
+
+
+
+#playersContainer #players
+{
+    /*border: 1px solid #306AB4;*/
+    margin: 10px auto auto auto;
+    width: 630px;
+    text-align: left;
+    border-spacing: 0;
+    /*width: 562px;*/
+    border-collapse: collapse;
+    font-family: Verdana;
+    font-size: 8pt;
+}
+
+#playersContainer #players, #playersContainer #players td
+{
+    box-shadow: 0px 0px 50px #618294;
+    border: 1px solid #146794;
+}
+
+
+#playersContainer #players thead
+{
+    background-color: black;
+    color: #FFFF8C;
+}
+
+#playersContainer #players thead tr th:first-child
+{
+    width: 30px;
+}
+
+
+#playersContainer #players thead tr #playerFieldName
+{
+    width: 200px;
+}
+
+#playersContainer #players thead tr #playerFieldLevel
+{
+    width: 40px;
+}
+
+#playersContainer #players thead tr #playerFieldEXP
+{
+    width: 95px;
+}
+
+#playersContainer #players thead tr #playerFieldKILLS
+{
+    width: 70px;
+}
+
+#playersContainer #players thead tr #playerFieldDEATHS
+{
+    width: 70px;
+}
+
+#playersContainer #players thead tr #playerFieldCLAN
+{
+    width: 90px;
+}
+
+#playersContainer #players tbody
+{
+    
+}
+
+#playersContainer #players .player
+{
+    height: 20px;
+}
+
+#playersContainer #players .player:hover td
+{
+    background-color: white;
+}
+
+/*
+//End - Players Ranking Page
+*/
+
+
+/*
+//Start - Player View Page
+*/
+#playerInfoContainer
+{
+    /*background-color: rgba(134, 202, 255, 0.38);*/
+    border: 7px;
+    width: 405px;
+    height: 220px;
+    margin: auto auto auto auto; 
+    text-align: left;
+    
+}
+
+#playerTitle
+{
+    position: absolute;
+    text-align: center;
+    font-family: verdana;
+    font-size: 15pt;
+    width: 405px;
+    margin: 31px auto auto auto;
+}
+
+
+.ClanGradeLink
+{
+    text-decoration: none;
+}
+
+.ClanGradeLink:hover
+{
+    cursor: default;
+    text-decoration: underline;
+}
+
+.ClanGradeLeader
+{
+    color: #0085FF;
+}
+
+.ClanGradeAdministrator
+{
+    color: #F60;
+}
+
+.ClanGradeMember
+{
+    color: #27F500;
+}
+
+
+#playerInfoContainer #InfoLeft
+{
+    position: absolute;
+    float: left;
+    margin-top: 91px;
+    margin-left: 10px;
+}
+
+#playerInfoContainer #InfoRight
+{
+    position: absolute;
+    margin-top: 91px;
+    margin-left: 190px;
+}
+
+#playerInfoContainer table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-family: Verdana;
+    font-size: 8pt;
+}
+
+
+
+#playerInfoContainer #InfoLeft tr:hover,#playerInfoContainer #InfoRight tr:hover
+{
+    background-color: rgba(255, 255, 255, 0.42);
+}
+
+
+#playerInfoContainer #InfoLeft tr td:first-child
+{
+    width: 75px;
+}
+
+#playerInfoContainer #InfoRight tr td:first-child
+{
+    width: 75px;
+}
+
+
+#playerInfoContainer #notExists
+{
+    text-align: center;
+    font-family: verdana;
+    font-size: 13pt;
+    margin-top: 15px;
+}
+
+/*
+//End - Player View Page
+*/
+
+
+/*
+//Start - Clans Ranking Page
+*/
+
+#clansContainer
+{
+    height: 490px;
+}
+
+#clansContainer #clans
+{
+    margin: 10px auto auto auto;
+    width: 630px;
+    
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-family: verdana;
+    font-size: 8pt;
+}
+
+#clansContainer #clans, #clansContainer #clans td
+{
+    box-shadow: 0px 0px 50px #618294;
+    border: 1px solid #146794;
+}
+
+#clansContainer #clans thead
+{
+    background-color: black;
+    color: #FFFF8C;
+}
+
+#clansContainer #clans thead tr th:first-child
+{
+    width: 30px;
+}
+
+#clansContainer #clans tbody .clan
+{
+    height: 20px;
+}
+
+#clansContainer #clans tbody .clan:hover
+{
+    background-color: #FFF;
+}
+
+
+
+#clansContainer #clans tbody tr td .ClanEmblem
+{
+    width: 45px;
+    height: 45px;
+}
+
+#HoldingNavigatePage
+{
+    /*width: 540px;*/
+    height: 30px;
+    margin: 20px auto auto auto;
+    background-color: #585858;
+}
+
+
+
+
+#HoldingNavigatePage #wrapperNavigatePages
+{
+    width: 668px;
+    position: absolute;
+    margin: 5px auto auto auto;
+    text-align: center;
+    margin-left: -5px;
+}
+
+#HoldingNavigatePage #wrapperNavigatePages .PageNumber
+{
+    display: inline;
+    margin-left: 5px;
+    margin-top: 5px;
+    /*color: #FFF !important;*/
+    font-family: verdana;
+    font-size: 10pt;
+    text-shadow: 0px 0px 2px #000;
+}
+
+#HoldingNavigatePage #wrapperNavigatePages .PageNumber a
+{
+    color: #FFF !important;
+}
+
+#HoldingNavigatePage #wrapperNavigatePages .PageNumber a:hover
+{
+    color: #FFA500 !important;
+    
+}
+
+/*
+//End - Clans Ranking Page
+*/
+
+
+/*
+//Start - Clan View Page
+*/
+
+#ClanInfoContainer
+{
+    height: 100%;
+    
+    font-family: verdana;
+    font-size: 8pt;
+}
+
+#ClanInfoContainer #ClanInfoWrapper
+{
+    width: 670px;
+    margin: auto auto auto -4px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanTitle
+{
+
+    margin: auto auto auto auto;
+    width: 120px;
+    margin-top: 31px;
+    margin-left: 185px;/*220px;*/
+    height: 80px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanTitle img
+{
+    position: absolute;
+    margin-left: -60px;
+    float: left;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanTitle div
+{
+    /*text-align: center;*/
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 15pt;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer
+{
+    width: auto;
+    margin-left: 30px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer .ClanDetails
+{
+    display: inline-block;
+    width: 150px;
+    margin: auto auto auto auto;
+    
+    
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer .ClanDetails:first-child
+{
+    width: 250px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer .ClanDetails tr td:first-child
+{
+    width: 75px;
+    max-width: 60px;
+}
+
+
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer .ClanDetails tr td:last-child
+{
+    width: 60px;
+    overflow: visible;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer .ClanDetails tr
+{
+    height: 18px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanDetailsContainer .ClanDetails tr:hover
+{
+    background-color: rgba(255, 255, 255, 0.42);
+}
+
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer
+{
+    margin-left: 10px;
+    margin-top:  10px; 
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer #TopMatesTitle
+{
+    margin-left: 45px;
+    font-size: 10pt;
+    font-family: monospace;
+    font-weight: bold;
+    color: #FFC200;
+    text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer .ClanMatesTable
+{
+    text-align: left;
+    width: 600px;
+    margin-left: 45px;
+    
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer .ClanMatesTable thead tr th:first-child
+{
+    width: 30px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer .ClanMatesTable thead tr th:nth-child(2)
+{
+    width: 160px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer .ClanMatesTable thead tr th:nth-child(3)
+{
+    width: 160px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer .ClanMatesTable tbody tr
+{
+    height: 20px;
+}
+
+#ClanInfoContainer #ClanInfoWrapper #ClanMatesContainer .ClanMatesTable tbody tr:hover
+{
+    background-color: rgba(255, 255, 255, 0.42);
+}

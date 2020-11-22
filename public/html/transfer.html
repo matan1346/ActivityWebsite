@@ -1,0 +1,67 @@
+{% include 'Layout/header.html' %}
+    <div id="TransferContainer">
+        {% if TransferAllowed == true %}
+            <form action="transfer" method="POST" name="TransferAccount">
+                <div id="TransferAccountForm">
+                    <div id="TransferTitle"></div>
+                        <table id="TransferTable">
+                            <tr>
+                                <td><label for="currUserID">Username:</label></td>
+                                <td><input type="text" name="currUserID" id="currUserID" maxlength="20" size="20" placeholder="Your current username" autocomplete="off" /></td>
+                                <td><div class="TransferFieldsMsg" id="currUserID_error"></div></td>
+                            </tr>
+                            <tr>
+                                <td><label for="currPassword">Password:</label></td>
+                                <td><input type="password" name="currPassword" id="currPassword" maxlength="20" size="20" placeholder="Your current password" autocomplete="off" /></td>
+                                <td><div class="TransferFieldsMsg" id="currPassword_error"></div></td>
+                            </tr>
+                            <tr>
+                                <td><label for="newUserID">New Username:</label></td>
+                                <td><input type="text" name="newUserID" id="newUserID" maxlength="20" size="20" placeholder="Your new username" autocomplete="off" /></td>
+                                <td><div class="TransferFieldsMsg" id="newUserID_error"></div></td>
+                            </tr>
+                            <tr>
+                                <td><label for="newPassword">New Password:</label></td>
+                                <td><input type="password" name="newPassword" id="newPassword" maxlength="20" size="20" placeholder="Your new password" autocomplete="off" /></td>
+                                <td><div class="TransferFieldsMsg" id="newPassword_error"></div></td>
+                            </tr>
+                        </table>
+                        <div id="SystemMsg"></div>
+                        <br /><br />
+                        <div id="HoldingButtons">
+                            <div class="buttons" style="width: 300px;">
+                                <button type="button" class="positive" name="SubTransfer" id="SubTransfer">
+                                    <img src="public/img/apply.png" alt=""/>
+                                    Transfer
+                                </button>
+                                <button type="reset" class="negative" id="CustomTransfer2">
+                                    <img src="public/img/cross.png" alt=""/>
+                                    Reset
+                                </button>
+                                <button style="display:  none;" type="button" class="regular" id="CustomTransfer" name="CustomTransfer">
+                                    <img src="public/img/textfield_key.png" alt=""/>
+                                    Custom               
+                                </button>
+                            </div>
+                        </div>
+                   
+                </div><br /><br />
+                <div id="CustomContainer" style="display: none;">
+                    <div id="CustomData">
+                        <div id="CustomCharacters">
+                            Characters to Transfer<br />
+                            <!--<select id="Characters" name="Characters" multiple="multiple" size="2">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                            </select>/-->
+                        </div>
+                    </div>
+                </div>
+             </form>
+        {% else %}
+        
+        {% endif %}
+    </div>
+{% include 'Layout/footer.html' %}

@@ -1,0 +1,147 @@
+{% include 'Layout/header.html' %}
+        <div id="RegisterContainer">
+            <form action="register" method="POST">
+                <table id="RegisterTable">
+                    <tr title="Characters allowed: (a-z,0-9,_,[,])">
+                        <td class="RegisterField"><label for="usernameR">Username:</label></td>
+                        <td><input type="text" name="usernameR" id="usernameR" maxlength="20" size="28" value="{{RegisterUserValues['Username']}}" placeholder="Enter your username. e.g: pro123" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,UsernameMes in RegisterMessage['Username'] %}
+                                <li>{{UsernameMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Characters allowed: (a-z,0-9, )">
+                        <td class="RegisterField"><label for="nameR">Name:</label></td>
+                        <td><input type="text" name="nameR" id="nameR" maxlength="20" size="24" value="{{RegisterUserValues['Name']}}" placeholder="Enter your name.  e.g: Matan" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,NameMes in RegisterMessage['Name'] %}
+                                <li>{{NameMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Characters allowed: (a-z,0-9,_)">
+                        <td class="RegisterField"><label for="passwordR">Password:</label></td>
+                        <td><input type="password" name="passwordR" id="passwordR" maxlength="20" size="22" placeholder="Enter your password" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,PasswordMes in RegisterMessage['Password'] %}
+                                <li>{{PasswordMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="The same password as before">
+                        <td class="RegisterField"><label for="re_passwordR">Re-Password:</label></td>
+                        <td><input type="password" name="re_passwordR" id="re_passwordR" maxlength="20" size="22" placeholder="Enter your password again" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,rePasswordMes in RegisterMessage['rePassword'] %}
+                                <li>{{rePasswordMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Characters allowed: (a-z,0-9,_,.,@)">
+                        <td class="RegisterField"><label for="emailR">Email:</label></td>
+                        <td><input type="email" name="emailR" id="emailR" maxlength="25" size="36" value="{{RegisterUserValues['Email']}}" placeholder="Enter your email. e.g: test@example.com" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,EmailMes in RegisterMessage['Email'] %}
+                                <li>{{EmailMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Male or Female">
+                        <td class="RegisterField"><label for="genderR">Gender:</label></td>
+                        <td>
+                            <select id="genderR" name="genderR">
+                        {% if RegisterUserValues['Gender'] == 1 %}
+                            <option value="1">Female</option>
+                            <option value="0">Male</option>
+                        {% else %}
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        {% endif %}
+                            </select>
+                        </td>
+                        <td>
+                            <ul>
+                            {% for key,GenderMes in RegisterMessage['Gender'] %}
+                                <li>{{GenderMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Age between 1-30">
+                        <td class="RegisterField"><label for="ageR">Age:</label></td>
+                        <td><input type="text" name="ageR" id="ageR" maxlength="25" size="18" value="{{RegisterUserValues['Age']}}" placeholder="Enter your age. e.g: 18" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,AgeMes in RegisterMessage['Age'] %}
+                                <li>{{AgeMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Characters allowed: (a-z,0-9, )">
+                        <td class="RegisterField"><label for="secret_questionR">Secret Question:</label></td>
+                        <td><input type="text" name="secret_questionR" id="secret_questionR" maxlength="40" size="51" value="{{RegisterUserValues['Secret_Question']}}" placeholder="Enter your secret question. e.g: What is my middle name" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,Secet_QuestionMes in RegisterMessage['Secret_Question'] %}
+                                <li>{{Secet_QuestionMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Characters allowed: (a-z,0-9, )">
+                        <td class="RegisterField"><label for="secret_answerR">Secret Answer:</label></td>
+                        <td><input type="text" name="secret_answerR" id="secret_answerR" maxlength="40" size="34" value="{{RegisterUserValues['Secret_Answer']}}" placeholder="Enter your answer question. e.g: Matan" autocomplete="off" /></td>
+                        <td>
+                            <ul>
+                            {% for key,Secet_AnswerMes in RegisterMessage['Secret_Answer'] %}
+                                <li>{{Secet_AnswerMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr title="Enter the code according to the Captcha Image">
+                        <td class="RegisterField"><label for="captchaR">Captcha:</label></td>
+                        <td><script type="text/javascript" src="http://{{captcha['server']}}/recaptcha/api/challenge?k={{ captcha['public_key'] }}"></script></td>
+                        <td>
+                            <ul>
+                            {% for key,CaptchaMes in RegisterMessage['Captcha'] %}
+                                <li>{{CaptchaMes}}</li>
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+                <div id="RegisterMessage">
+                <ul>
+                    {% for key,SystemMes in RegisterMessage['System'] %}
+                        <li>{{SystemMes}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div id="HoldingButtons">
+                    <div class="buttons">
+                        <button type="submit" class="positive" name="SubRegister">
+                            <img src="public/img/apply.png" alt=""/>
+                            Register
+                        </button>
+                        <button type="reset" class="negative">
+                            <img src="public/img/cross.png" alt=""/>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+{% include 'Layout/footer.html' %}

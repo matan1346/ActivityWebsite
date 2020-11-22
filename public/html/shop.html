@@ -1,0 +1,22 @@
+{% include 'Layout/header.html' %}
+    <div id="ShopContainer">
+    {% if ItemData != false %}
+      <div id="Coins">You have <span>{{Coins}}</span> Coins</div>
+    {% endif %}
+        <div id="ShopNavigateContainer">
+            <div id="ShopNavigateData">
+                    <div class=""><a href="shop/Menu">Back to Menu</a></div>
+            </div>
+        </div>
+        <div id="ShopContainerData">
+        {% autoescape false %}
+        {% if ItemData == false %}
+            <div id="PleaseLogin">Please login to your user first.</div>
+        {% else %}
+            {% include 'shop/shop_'~shop_Type~'.html' %}
+        {% endif %}
+        {% endautoescape %}
+        </div>
+        <div id="ShopMessage">{{SystemMessage}}</div>
+    </div>
+{% include 'Layout/footer.html' %}

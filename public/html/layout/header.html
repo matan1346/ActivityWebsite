@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" /> 
+        <base href="{{ site_url }}" />
+  
+  
+  
+        <title>{{ title }}</title>
+    
+    
+        <!--  Start CSS Links   /-->
+            <link rel="stylesheet" type="text/css" href="public/css/main.css" />
+            <link rel="stylesheet" type="text/css" href="public/css/forms.css" />
+            <link rel="stylesheet" type="text/css" href="public/css/jquery.css" />
+            <!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />/-->
+        {% for key, css_file_name in css_links %}
+            <link rel="stylesheet" type="text/css" href="public/css/{{ css_file_name }}" />
+        {% endfor %}
+        <!--  End CSS Links/-->
+    </head>
+    <body>
+        <!--  Start JS Links   /-->
+            
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+            {% if confirmbox == false %}
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function() {
+    
+                    if (!$.isFunction(window.live)) {
+                        //execute it
+                        //somenoobfunction();
+                        $('.player_link,.clan_link').bind('mouseover', function(){
+                        $(this).attr('target','_blank').attr('title', $(this).text()+'`s Profile');
+                        });
+                        
+                        $('.player_link,.clan_link').bind('mouseout', function(){
+                            $(this).removeAttr('title').removeAttr('target');
+                        });
+                    }
+                    
+                
+                
+             });
+            </script>
+            {% else %}
+            <script type="text/javascript">
+            $(document).ready(function() {
+    
+                    if (!$.isFunction(window.live)) {
+                        //execute it
+                        //somenoobfunction();
+                        $('.player_link,.clan_link').live('mouseover', function(){
+                        $(this).attr('target','_blank').attr('title', $(this).text()+'`s Profile');
+                        });
+                        
+                        $('.player_link,.clan_link').live('mouseout', function(){
+                            $(this).removeAttr('title').removeAttr('target');
+                        });
+                    }
+                    
+                
+                
+             });
+            </script>
+            {% endif %}
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="public/js/jquery.easy-confirm-dialog.js"></script>
+            <script type="text/javascript" src="public/js/main.js"></script>
+            <script type="text/javascript">BASE_PLAYER_PROFILE_PATH = '{{BASE_PLAYER_PROFILE_PATH}}';BASE_CLAN_PROFILE_PATH = '{{BASE_CLAN_PROFILE_PATH}}';</script>
+        {% for key, js_file_name in js_links %}
+            <script type="text/javascript" src="public/js/{{ js_file_name }}"></script>
+        {% endfor %}
+        <!--  End JS Links/-->
+        
+        
+        <div id="GunzWebContainer">
+        
+            <div id="ServerNameLogo">{{ server_name }}</div>
+            
+            <div id="MenuContainer">
+                
+                <div id="Menu">
+                {% for pageName, pageLink in menu %}
+                    <div class="MenuItem">
+                        <a class="MenuLink" href="{{pageLink}}">{{pageName}}</a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            
+            
+            <div id="ContainerContents">
+                <div id="ServerImageLogoH"></div>
+                
+                
+                <div id="LeftContent">
+                    
+                    <div id="LTop"></div>
+                    
+                    <div id="LMiddle">
+                    
+                        {% if UserConnected == true %}
+                            {% include 'account_side.html' %}
+                        {% else %}
+                            {% include 'login_side.html' %}
+                        {% endif %}
+                            
+                        <!--<div id="AboutServer">IsraelGunZ is a Israel private server and blablabla...</div>/-->
+                        <div id="BestOfContainer">
+                            <table id="BestOfTable">
+                                <thead>
+                                    <tr>
+                                        <th>Best of</th>
+                                        <th>Name</th>
+                                        <th>Result</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                         <td>EXP</td>
+                                         <td><a href="{{BASE_PLAYER_PROFILE_PATH~Best_of_EXP['Name']['RegularName']}}" class="player_link">{{Best_of_EXP['Name']['ColorName']|raw}}</a></td>
+                                         <td>{{Best_of_EXP['XP']}}</td>
+                                    </tr>
+                                    <tr>
+                                         <td>KDR</td>
+                                        <td><a href="{{BASE_PLAYER_PROFILE_PATH~Best_of_KDR['Name']['RegularName']}}" class="player_link">{{Best_of_KDR['Name']['ColorName']|raw}}</a></td>
+                                         <td>{{Best_of_KDR['KDR']}}</td>
+                                    </tr>
+                                    <tr>
+                                         <td>Kill</td>
+                                         <td><a href="{{BASE_PLAYER_PROFILE_PATH~Best_of_KILL['Name']['RegularName']}}" class="player_link">{{Best_of_KILL['Name']['ColorName']|raw}}</a></td>
+                                         <td>{{Best_of_KILL['KillCount']}}</td>
+                                    </tr>
+                                    <tr>
+                                         <td>Death</td>
+                                         <td><a href="{{BASE_PLAYER_PROFILE_PATH~Best_of_DEATH['Name']['RegularName']}}" class="player_link">{{Best_of_DEATH['Name']['ColorName']|raw}}</a></td>
+                                         <td>{{Best_of_DEATH['DeathCount']}}</td>
+                                    </tr>
+                                    <tr>
+                                         <td>PlayTime</td>
+                                         <td><a href="{{BASE_PLAYER_PROFILE_PATH~Best_of_PLAYTIME['Name']['RegularName']}}" class="player_link">{{Best_of_PLAYTIME['Name']['ColorName']|raw}}</a></td>
+                                         <td>{{Best_of_PLAYTIME['PlayTime']}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                    </div>
+                    
+                    <div id="LBottom">
+                        <div id="RankingBar">
+                            
+                            <div id="RankingTitle">Top 5 Ranking</div>
+                            
+                            <div id="RankingPlayers">
+                                Top 5 Players
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Lv.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for rank, playerTopData in top_players %}
+                                        <tr class="topRank{{(rank+1)}}">
+                                            <td>{{rank+1}}</td>
+                                            <td>
+                                            {% if playerTopData['Name'] != "--" %}
+                                                <a class="player_link" href="{{BASE_PLAYER_PROFILE_PATH~playerTopData['Name']['RegularName']}}">{{playerTopData['Name']['ColorName']|raw}}</a>
+                                            {% else %}    
+                                                --
+                                            {% endif %}
+                                            </td>
+                                            <td>{{playerTopData['Level']}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <a href="players" style="color: #DAA23D;">View All</a>
+                            </div>
+                            <br />
+                            <div id="RankingClans">
+                                Top 5 Clans
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Points</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for rank, clanTopData in top_clans %}
+                                        <tr class="topRank{{(rank+1)}}">
+                                            <td>{{rank+1}}</td>
+                                            <td>
+                                            {% if clanTopData['Name'] != "--" %}
+                                                <a class="clan_link" href="{{BASE_CLAN_PROFILE_PATH~clanTopData['Name']['RegularName']}}">{{clanTopData['Name']['ColorName']|raw}}</a>
+                                            {% else %}    
+                                                --
+                                            {% endif %}
+                                            </td>
+                                            <td>{{clanTopData['Point']}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                 <a href="clans" style="color: #DAA23D;">View All</a>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div id="RightContent">
+                    
+                    <div id="RTop"></div>
+                    
+                    <div id="RMiddle">
+                        

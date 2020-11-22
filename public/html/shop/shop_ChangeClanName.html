@@ -1,0 +1,37 @@
+<div id="ChangeNameContainer">
+    {% if ClansExists == true %}
+    <div id="ChangeNameForm">
+        <h2>Change Clan Name</h2>
+        <form action="shop/{{shop_Type}}" method="POST">
+            <table id="ChangeNameTable">
+                <tr>
+                    <td>Clan:</td>
+                    <td><select name="ClanSelect">
+                        {% for ClanCLID,ClanName in ClanSelect %}
+                                <option value="{{ClanCLID}}">{{ClanName[0]['Name']['RegularName']}}</option>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>New Name:</td>
+                    <td><input type="text" name="ClanN" id="ClanN" maxlength="{{MaxLength}}" size="20" placeholder="New name" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Cost:</td>
+                    <td><div id="TotalPrice">{{Cost}} Coins</div></td>
+                </tr>
+            </table>
+            <div id="HoldingButtons">
+                <div class="buttons">
+                    <button type="submit" class="positive" name="Sub{{shop_Type}}">
+                        <img src="public/img/apply.png" alt=""/>
+                        Change Name
+                    </button>
+                </div>
+            </div>
+        </form>
+     </div>
+     {% else %}
+        <div id="NoClans">Only leaders can use this feature..</div>
+     {% endif %}
+</div>

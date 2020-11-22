@@ -1,0 +1,13 @@
+<div id="ShopMenuContainer">
+    <div id="MenuShopWrapper">
+    <table class="MenuShopItems">
+    {% for i,MenuRowData in MenuShop %}
+        <tr>
+        {% for hrefName,MenuData in MenuRowData %}
+            <td class="MenuShopItem"><a href="shop/{{hrefName}}">{{MenuData['Name']}}</a></td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
+</div>

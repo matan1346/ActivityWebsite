@@ -1,0 +1,70 @@
+{% include 'Layout/header.html' %}
+    <div id="AccountProfileContainer">
+        
+        <div id="ProfileData">
+            {% if IsConnected == true %}
+            <div class="ProfileTitleData">Account Details</div>
+            <table id="UserDetails">
+                 <tr>
+                    <td>UserID:</td>
+                    <td>{{ProfileData['UserID']}}</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ProfileData['Name']}}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{ProfileData['Age']}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ProfileData['Email']}}</td>
+                </tr>
+            </table>
+            <br />
+            <div class="ProfileTitleData">Account Data</div>
+            <table id="UserData">
+                 <tr>
+                    <td>My Characters:</td>
+                    <td>
+                    {% if  ProfileData['Characters'] %}
+                         <select style="width: 170px" id="MyCharacters">
+                        {% for Charid, Charname in ProfileData['Characters'] %}
+                            <option>{{Charname['RegularName']}}</option>
+                        {% endfor %}
+                        </select>
+                    {% else %}
+                       --
+                    {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>My Clans:</td>
+                    <td>
+                    {% if  ProfileData['ClanLeaders'] %}
+                        <select style="width: 170px" id="MyClans">
+                        {% for Clanid, ClanDetails in ProfileData['ClanLeaders'] %}
+                            <option title="Master - {{ProfileData['Characters'][ClanDetails[0]['MasterCID']]['RegularName']}}">{{ClanDetails[0]['Name']['RegularName']}}</option>
+                        {% endfor %}
+                        </select>
+                    {% else %}
+                       --
+                    {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Coins:</td>
+                    <td>{{ProfileData['Coins']}}</td>
+                </tr>
+                <tr>
+                    <td>Grade:</td>
+                    <td><span class="UserGrade" style="font-weight: bold;color: {{ProfileData['UGradeID']['GradeColor']}};">{{ProfileData['UGradeID']['GradeName']}}</span></td>
+                </tr>
+            </table>
+            {% else %}
+                Please login first.
+            {% endif %}
+        </div>
+    </div>
+{% include 'Layout/footer.html' %}

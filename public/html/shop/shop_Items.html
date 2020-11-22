@@ -1,0 +1,49 @@
+<div id="ItemsContainer">
+
+    {% if ItemsExist == true %}
+    <table id="HoldingItems">
+        {% for key,ItemArray in Items %}
+            <tr>
+                {% for key2,ItemData in  ItemArray %}
+                    <td class="ShopItem">
+                        <table class="ItemData" title="{{ItemData['Name']}}">
+                            <tr>
+                                <td class="ItemImage" rowspan="7"><img src="public/images/shop/{{ItemData['WebImgName']}}" alt="{{ItemData['Name']}} Image" width="85" height="102" /></td>
+                                <td class="ItemName">{{ItemData['Name']}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="ItemDetails">
+                                        <tr>
+                                            <td>Type:</td>
+                                            <td>{{ItemData['Slot']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gender:</td>
+                                            <td>{{ItemData['ResSex']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Level:</td>
+                                            <td>{{ItemData['ResLevel']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Price:</td>
+                                            <td>{{ItemData['CashPrice']}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a class="ItemButton" href="shop/Items/{{ItemData['ItemID']}}">PURCHASE ITEM</a></td>
+                            </tr>
+                        </table>
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <div id="ItemsNotExist">No Items</div>
+    {% endif %}
+    
+</div>

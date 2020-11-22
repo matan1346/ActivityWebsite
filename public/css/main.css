@@ -1,0 +1,591 @@
+@font-face {  
+  font-family: EasyRider ;  
+  src: url(../fonts/easyrider.ttf) format("truetype");  
+}
+
+@font-face {  
+  font-family: GelatinaElemente ;  
+  src: url(../fonts/gelatinaelemente.ttf) format("truetype");  
+}  
+
+.player_link,.clan_link
+{
+    font-weight: bold;
+    text-shadow: #9B9B9B 0.1em 0.1em 0.2em;
+}
+
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+div:hover
+{
+    cursor:default;
+}
+
+
+table:hover
+{
+    cursor:default;
+}
+
+body
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #1F1F1F;
+    height: 980px;
+}
+
+.CreditTo
+{
+    color: #0587FF;
+}
+
+.CreditTo:hover
+{
+    color: #CE790D;
+}
+
+.topRank1
+{
+    background: #FFEC8B url(../img/1stplace.png);
+    background-size: 230px;
+}
+
+.topRank2
+{
+    background: #E6E8FA url(../img/2ndplace.png);
+    background-size: 230px;
+}
+
+.topRank3
+{
+    background: #AA956E url(../img/3rdplace.png);
+    background-size: 230px;
+}
+
+.topRank1:hover,.topRank2:hover,.topRank3:hover
+{
+    background-image: none;
+    background-color: rgba(255, 226, 11, 0.47);
+}
+
+
+#ServerNameLogo
+{
+    background: -webkit-linear-gradient(#F00, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fiill-color: transparent;
+    position: absolute;
+    top: 0;
+    margin-left: 355px;
+    margin-top: 100px;
+    font-family: "Agency FB";
+    font-size: 58pt;
+    color: rgba(255, 255, 255, 0.36);
+}
+
+#ServerImageLogoH
+{
+    width: 325px;
+    height: 294px;
+    margin-left: -72px;
+    margin-top: -228px;
+    position: absolute;
+    background-image: url(../img/GunzLogoHeader.png);
+    background-repeat: no-repeat;
+    background-size: 324px;
+    z-index: 1;
+}
+
+#ServerImageLogoC
+{
+    width: 325px;
+    height: 278px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/GunzLogoContents.png);
+    background-repeat: no-repeat;
+    background-size: 324px;
+    z-index: -1;
+}
+
+#ServerImageLogoF
+{
+    width: 325px;
+    height: 304px;
+    left: 0px;
+    margin-top: -148px;
+    position: absolute;
+    background-image: url(../img/GunzLogoFooter.png);
+    background-repeat: no-repeat;
+    background-size: 225px;
+    z-index: 1;
+}
+
+#MenuContainer
+{
+    top: 0;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 76px;
+    background-image: url(../img/MenuBackground.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+
+#MenuContainer #Menu
+{
+    
+    margin-top: 50px;
+    right: 0px;
+}
+
+#MenuContainer #Menu .MenuItem
+{
+    float: right;
+    margin-top: -5px;
+    margin-right: -60px;
+    right: 1px;
+    width: 137px;
+    height: 70px;
+    background-image: url(../img/MenuBar.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#MenuContainer #Menu .MenuItem:hover
+{
+    width: 137px;
+    height: 70px;
+    background-image: url(../img/MenuBar2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+#MenuContainer #Menu .MenuItem:first-child
+{   
+    margin-right: 0px;
+}
+
+
+#MenuContainer #Menu .MenuItem .MenuLink
+{
+    position: absolute;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 8pt;
+    width: 66px;
+    margin-left: 28px;
+    margin-top: 28px;
+}
+
+
+#ContainerContents
+{
+    position:relative;
+    width: 950px;
+    height: 800px;
+    margin: 255px auto auto auto;
+    /*border: 1px #FFFFFF solid;*/
+    /*background-color: #EBEBEB;/*#F0F0F0;*/
+    background-image: -ms-linear-gradient(top, white 0%, rgba(55, 150, 190, 0.21) 100%);
+    background-image: -moz-linear-gradient(top, white 0%, rgba(55, 150, 190, 0.21) 100%);
+    background-image: -o-linear-gradient(top, white 0%, rgba(55, 150, 190, 0.21) 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, rgba(55, 150, 190, 0.21)));
+    background-image: -webkit-linear-gradient(top, white 0%, rgba(55, 150, 190, 0.21) 100%);
+    background-image: linear-gradient(to bottom, white 0%, rgba(55, 150, 190, 0.21) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#3796BE')";
+}
+
+#LeftContent
+{
+    position: absolute;
+    width: 280px;
+    height: 100%;
+}
+
+#LeftContent #LTop
+{
+    width: 99%;
+    height: 62px;
+    border: 1px #616161 solid;
+}
+
+#LeftContent #LMiddle
+{
+    width: 99%;
+    height: 273px;
+    
+}
+
+#HoldingButtons
+{
+    margin: 10px auto auto auto;
+    width: 240px;
+    font-size: 10pt;
+}
+
+#LeftContent #LMiddle #AccountBar
+{
+    width: 100%;
+    height: 174px;
+    background-color: #8DA5AC;/*#F90;*/
+    border: 1px #616161 solid;
+}
+
+#LeftContent #LMiddle #AccountBar #AccountBarContent
+{
+    color: #FFFF8C;
+    font-weight: bold;
+    margin-left: 10px;/*20px;*/
+    margin-top: 4px;
+}
+
+
+#LeftContent #LMiddle #AccountBar #AccountBarContent span
+{
+    /*font-family: cursive;*/
+    color: #2B98FD;
+    font-size: 24px;/*21px;*/
+}
+
+#LeftContent #LMiddle #AccountBar #AccountBarContent ul
+{
+    position: absolute;
+    margin-left: -22px;
+    margin-top: 12px;
+}
+
+#LeftContent #LMiddle #LoginBar
+{
+    width: 100%;
+    height: 174px;
+    background-color: #8DA5AC;/*#F90;*/
+    border: 1px #616161 solid;
+}
+
+#LeftContent #LMiddle #LoginBar #LoginBarContent
+{
+    color: #FFFF8C;
+    font-weight: bold;
+    margin-left: 10px;/*20px;*/
+    margin-top: 4px;
+}
+
+#LeftContent #LMiddle #LoginBar #LoginBarContent span
+{
+    /*font-family: cursive;*/
+    color: #2B98FD;
+    font-size: 24px;/*21px;*/
+}
+
+#LeftContent #LMiddle #LoginBar #LoginBarContent ul
+{
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 10px;
+    color: #FFFF8C;
+}
+
+
+#LeftContent #LMiddle #LoginBar #LoginBarContent input
+{
+    
+border-top-right-radius: 15px 15px;
+
+border-bottom-right-radius: 15px 15px;
+}
+
+/*
+border-top-left-radius
+*/
+
+#LeftContent #LMiddle #AboutServer
+{
+    width: 100%;
+    height: 100px;
+    border: 1px #616161 solid;
+}
+
+#LeftContent #LMiddle #BestOfContainer
+{
+    width: 100%;
+    height: 100px;
+    border: 1px #616161 solid;
+    font-family: verdana;
+    font-size: 7pt;
+}
+
+
+#LeftContent #LMiddle #BestOfTable
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    background-color: white;
+    margin: 2px auto auto auto;
+    width: 250px;
+    text-align: left;
+    
+     border-top-left-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+    border-bottom-left-radius: 6px 6px;
+    border-bottom-right-radius: 6px 6px;
+}
+
+#LeftContent #LMiddle #BestOfTable thead tr th
+{
+    color: #FFFF8C;
+    background-color: black;
+}
+
+#LeftContent #LMiddle #BestOfTable thead tr th:first-child
+{
+    border-top-left-radius: 6px 6px;
+    width: 65px;
+}
+
+#LeftContent #LMiddle #BestOfTable thead tr th:last-child
+{
+    border-top-right-radius: 6px 6px;
+    width: 80px;
+}
+
+#LeftContent #LMiddle #BestOfTable tr
+{
+    height: 16px;
+}
+
+#LeftContent #LMiddle #BestOfTable tr:hover
+{
+    background-color: rgba(255, 226, 11, 0.47);
+}
+
+#LeftContent #LMiddle #BestOfTable tr td
+{
+    margin-right: 10px;
+}
+
+
+#LeftContent #LBottom
+{
+    color: #DAA23D;
+    position: absolute;
+    margin-top: 5px;
+    width: 99%;
+    height: 456px;
+    border: 1px #616161 solid;
+    border-bottom: 0px;
+    background-color: rgba(67, 95, 107, 0.21);/*#8DA5AC;/*#F90;*/
+}
+
+#LeftContent #LBottom #RankingBar
+{
+    
+    height: 325px;
+    margin: auto auto auto auto;
+    border-bottom: 1px #616161 solid;
+    font-family: Verdana;
+    font-size: 8pt;
+}
+
+#LeftContent #LBottom #RankingBar #RankingTitle
+{
+    text-align: center;
+    font-family: Verdana;
+    font-size: 13pt;
+}
+
+#LeftContent #LBottom #RankingBar table
+{
+    color: black;
+    width: 250px;
+    background-color: white;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 7pt;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-bottom-left-radius: 6px 6px;
+    border-bottom-right-radius: 6px 6px;
+    border-top-left-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+}
+
+#LeftContent #LBottom #RankingBar table thead th
+{
+    background-color: #000;
+}
+
+#LeftContent #LBottom #RankingBar table thead th:first-child
+{
+    width: 40px;
+    border-top-left-radius: 6px 6px;
+}
+
+#LeftContent #LBottom #RankingBar table thead th:last-child
+{
+    width: 60px;
+    border-top-right-radius: 6px 6px;
+}
+
+#LeftContent #LBottom #RankingBar table thead tr
+{
+    color:  #FFFF8C;
+}
+
+
+
+#LeftContent #LBottom #RankingBar table tbody tr:hover
+{
+    background-color: rgba(255, 226, 11, 0.47);
+    
+}
+
+#LeftContent #LBottom #RankingBar table tbody tr td
+{
+    max-width: 70px;
+}
+
+#LeftContent #LBottom #RankingBar #RankingPlayers
+{
+    position:  relative;
+    margin: auto auto auto auto;
+    width: 250px;
+    height: 134px;
+    border-bottom: 1px #616161 solid;
+}
+
+#LeftContent #LBottom #RankingBar #RankingClans
+{
+    position:  relative;
+    margin-top: 12px;
+    margin: auto auto auto auto;
+    width: 250px;
+    height: 134px;
+    border-bottom: 1px #616161 solid;
+}
+
+
+#RightContent
+{
+    margin-left: 278px;
+    width: 670px;
+    height: 100%;
+}
+
+
+#RightContent #RTop
+{
+    width: 100%;
+    height: 62px;
+    border: 1px #616161 solid;
+}
+
+
+#RightContent #RMiddle
+{
+    width: 100%;
+    border: 1px #616161 solid;
+    height: 490px;
+}
+
+
+#FooterContainer
+{
+    position: fixed;
+    left: 0px;
+    /*margin-top: 112px;*/
+    bottom: 0px;
+    width: 100%;
+    height: 76px;
+    background-image: url(../img/CreditsBackGround.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 2;
+}
+
+#FooterContainer #Credits
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+}
+
+
+#FooterContainer #ServerNameF
+{
+    background: -webkit-linear-gradient(#FF7F1A, #79B9FF);
+    -webkit-background-clip: text;
+    -webkit-text-fiill-color: transparent;
+    font-family: GelatinaElemente;
+    font-size: 30pt;
+    right: 0;
+    position: absolute;
+    width: 40%;
+    color: rgba(255, 255, 255, 0);
+}
+
+#FooterContainer #ServerDetails
+{
+
+    font-family: Verdana;
+    font-size: 8pt;
+    right: 0;
+    position: absolute;
+    bottom: 5px;
+    width: 40%;
+    
+}
+
+#FooterContainer #ServerDetails .ServerDetail
+{
+    display: inline;
+    color: #5F3F05;
+    text-shadow: #636363 0.1em 0.1em 0.2em;
+}
+
+#FooterContainer #ServerDetails .ServerDetail:hover
+{
+    cursor: pointer;
+    color: green;
+    /*font-weight: bold;*/
+}
+
+#FooterContainer #ServerDetails .onlineStatus:hover
+{
+    color: #149C0F !important;
+}
+
+#FooterContainer #ServerDetails .offlineStatus:hover
+{
+    color: #AF3434 !important;
+}
+
+#FooterContainer #ServerDetails .ServerDetail span
+{
+    color: #008FFF;
+}
+
+.status_icon
+{
+    margin-bottom: -4px;
+}

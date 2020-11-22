@@ -1,0 +1,44 @@
+
+
+#EditProfileContainer
+{
+    margin: 60px auto auto auto;
+    width: 570px;
+    font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size: 8pt;
+    /*font-weight: bold;*/
+}
+
+#EditProfileContainer #EditProfile .EditTitle
+{
+    font-size: 12pt;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+#EditProfileContainer #EditProfile #EditDetails
+{
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+#EditProfileContainer #EditProfile #EditDetails tr
+{
+    height: 25px;
+}
+
+#EditProfileContainer #EditProfile #EditDetails tr td:first-child
+{
+    width: 130px;   
+}
+
+#EditProfileContainer #EditProfile #EditMessageSystem
+{
+    margin-top: 30px;
+    margin-left: -25px;
+    color: #1A5977;
+}
+
+

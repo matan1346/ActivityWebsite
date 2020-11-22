@@ -1,0 +1,15 @@
+{% include 'Layout/header.html' %}
+Hello {{ world }}!
+<br />
+<br />
+{% for key, value in items %} 
+{{ key }} :
+<pre>
+{% for key2, value2 in value %}
+    {{key2}}: {{ value2 }}<br /> 
+{% endfor %}
+</pre>
+<br />
+{% endfor %}
+{% include 'Layout/footer.html' %}
+  

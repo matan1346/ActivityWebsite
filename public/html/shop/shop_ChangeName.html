@@ -1,0 +1,38 @@
+<div id="ChangeNameContainer">
+    {% if CharactersExists == true %}
+    <div id="ChangeNameForm">
+        <h2>Change Character Name</h2>
+        <form action="shop/{{shop_Type}}" method="POST">
+            <table id="ChangeNameTable">
+                <tr>
+                    <td>Character:</td>
+                    <td><select name="CharacterSelect">
+                        {% for CharCID,CharName in CharacterSelect %}
+                                <option value="{{CharCID}}">{{CharName['RegularName']}}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>New Name:</td>
+                    <td><input type="text" name="CharacterN" id="CharacterN" maxlength="{{MaxLength}}" size="20" placeholder="New name" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Cost:</td>
+                    <td><div id="TotalPrice">{{Cost}} Coins</div></td>
+                </tr>
+            </table>
+            <div id="HoldingButtons">
+                <div class="buttons">
+                    <button type="submit" class="positive" name="Sub{{shop_Type}}">
+                        <img src="public/img/apply.png" alt=""/>
+                        Change Name
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% else %}
+        <div id="NoCharacters">You do not have any character.</div>
+    {% endif %}
+</div>

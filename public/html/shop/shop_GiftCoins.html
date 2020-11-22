@@ -1,0 +1,25 @@
+<div id="GiftCoinsContainer">
+    <div id="GiftCoinsWrapper">
+        <h2>Gift Coins</h2>
+        <form action="shop/{{shop_Type}}" method="POST">
+            <table id="GiftCoinsTable">
+                <tr>
+                    <td><label for="CharacterName">Gift to:</label></td>
+                    <td><input type="text" id="CharacterName" name="CharacterName" maxlength="25" size="25" placeholder="Player name" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td><label for="GiftAmount">Amount:</label></td>
+                    <td><input type="text" size="5" maxlength="6" id="GiftAmount" name="GiftAmount" placeholder="Amount" autocomplete="off" /> Coin(s)</td>
+                </tr>
+            </table>
+            <div id="HoldingButtons">
+                <div class="buttons">
+                    <button type="submit" class="positive" name="Sub{{shop_Type}}">
+                        <img src="public/img/apply.png" alt="Apply" />
+                        Gift Coins
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

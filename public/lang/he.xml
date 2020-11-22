@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lang>
+    <langspec>
+        <str name="DIRECTION">rtl</str>
+        <str name="TEXT_ALIGN">right</str>
+    </langspec>
+
+    <main>
+         <str name="PLEASE">בבקשה</str>
+         <str name="HELLO">שלום</str>
+         <str name="LOG_IN">התחבר</str>
+         <str name="LOG_OUT">התנתק</str>
+         <str name="LOADING">טוען...</str>
+    </main>
+    
+    <navigator>
+        <str name="HOME">בית</str>
+        <str name="ACCOUNT">משתמש</str>
+    </navigator>
+    
+    <property>
+        <account>
+            <str name="AID">AID</str>
+            <str name="USER_ID">שם משתמש</str>
+            <str name="NAME">שם</str>
+            <str name="MAIL">מייל</str>
+            <str name="AGE">גיל</str>
+            <str name="UGRADEID">UGradeID</str>
+        </account>
+        <character>
+            <str name="CID">CID</str>
+            <str name="NAME">שם</str>
+            <str name="LEVEL">רמה</str>
+        </character>
+    </property>
+    
+    <ranking>
+        <character>
+            <str name="NAME">שם</str>
+            <str name="LEVEL">רמה</str>
+            <str name="EXP">ניסיון</str>
+            <str name="KILLS">הריגות</str>
+            <str name="DEATHS">מיתות</str>
+            <str name="CLAN">קלאן</str>
+        </character>
+        
+        <clan>
+            <str name="NAME">שם</str>
+            <str name="MASTER">מאסטר</str>
+            <str name="WINS">נצחונות</str>
+            <str name="LOSSES">הפסדים</str>
+            <str name="POINTS">נקודות</str>
+        </clan>
+    </ranking>
+    
+    <view>
+        <character>
+            <str name="NAME">שם</str>
+            <str name="LEVEL">רמה</str>
+            <str name="EXP">ניסיון</str>
+            <str name="KILLS">הריגות</str>
+            <str name="DEATHS">מיתות</str>
+            <str name="RATE">מצב</str>
+            <str name="RANK">דירוג</str>
+            <str name="CLAN">קךאן</str>
+            <str name="CREATED_IN">נוצר ב</str>
+            <str name="LAST_TIME_LOGIN">התחברות אחרונה</str>
+            <str name="SIGNATURE">חתימה</str>
+        </character>
+        
+        <clan>
+            <str name="NAME">שם</str>
+            <str name="PROFILE">הפרופיל של</str>
+            <str name="CLAN_L">קפטן</str>
+            <str name="CLAN_A">סגן קפטן</str>
+            <str name="CLAN_M">חבר</str>
+            <str name="MASTER">מאסטר</str>
+            <str name="MEMBERS">חברים</str>
+            <str name="TOP_MEMBERS">חברים {{ top_mates }} מציג</str>
+            <str name="WINS">נצחונות</str>
+            <str name="LOSSES">הפסדים</str>
+            <str name="RANK">דירוג</str>
+            <str name="POINTS">נקודות</str>
+            <str name="JOINED_AT">הצטרף ב</str>
+        </clan>
+    </view>
+    
+    <form>
+        <title>
+            <account>
+                <str name="GENERAL">כללי</str>
+            </account>
+        </title>
+    
+        <general>
+            <str name="CHANGE">שנה</str>
+            <str name="TO">ל</str>
+            <str name="CHAR_NAME">שם דמות</str>
+        </general>
+        
+        <reason>
+            <str name="ENTER_REASON">הכנס סיבה</str>
+            <str name="REASON">סיבה</str>
+        </reason>
+        
+        <login>
+            <str name="USER">שם משתמש</str>
+            <str name="PASSWORD">סיסמא</str>
+            <str name="PANEL_CODE">קוד פאנל</str>
+            <str name="WRONG_INFO">מידע שגוי</str>
+            <str name="LOGGED_IN">התחברת בהצלחה</str>
+        </login>
+        
+        <logout>
+            <str name="LOGGED_OUT">התנתקת בהצלחה</str>
+        </logout>
+        
+        <str name="SEND">שלח</str>
+        <str name="CANCLE">בטל</str>
+        <str name="LOGIN">התחבר</str>
+    </form>
+    
+    <module> <!-- str name -> module name -->
+        <desc>
+            <str name="login">התחברות לפאנל גאנז</str>
+        </desc>
+        
+        <keywords>
+            <str name="login">Login, Gunz Login, Gunz Panel Login</str>
+        </keywords>
+    </module>
+    
+    <error>
+        <str name="STR_NOT_FOUND">סטרניג לא נמצא</str>
+        <str name="MISSING_FORM_FIELDS">חסרות שורות בטופס</str>
+        <str name="AUTH_FAILED">אימות נכשל</str>
+        <str name="ERROR">שגיאה</str>
+        <str name="NOT_LOGGED_IN">לא מחובר</str>
+        <str name="BAD_REQUEST">בקשה רעה</str>
+        
+        <database>
+            <str name="CONNECT">לא יכול להתחבר לטבלה</str>
+            <str name="QUERY_EXECUTION">ביצוע שאילתה נכשל</str>
+        </database>
+    </error>
+</lang>

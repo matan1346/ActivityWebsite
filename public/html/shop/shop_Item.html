@@ -1,0 +1,169 @@
+<div id="ItemContainer">
+    {% if IsItemExists == true %}
+    <form action="shop/Items/{{ItemDetails['ItemID']}}" method="POST" name="BuyItem">
+        <table id="Data">
+            <tr>
+                <td id="ItemImageB"><img src="public/images/shop/{{ItemDetails['WebImgName']}}" alt="{{ItemDetails['WebImgName']}}" width="100" height="117" /></td>
+                <td>
+                    <table id="MainDetails">
+                        <tr>
+                            <td id="ItemName">{{ItemDetails['Name']}}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="ItemDescription">{{ItemDetails['Description']}}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Type:</td>
+                            <td>{{ItemDetails['Slot']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>{{ItemDetails['ResSex']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Level:</td>
+                            <td>{{ItemDetails['ResLevel']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Weight:</td>
+                            <td>{{ItemDetails['Weight']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <!--<td>{{ItemDetails['CashPrice']}}</td>/-->
+                            <td>
+                                <select name="TimeOption" id="ItemOption">
+                                    {% for OptionNumber, OptionDetails in ItemDetails['TimeOptions'] %}
+                                        <option value="{{OptionNumber}}">{{OptionDetails['Name']}} - {% if isVIP == true %}{{(ItemDetails['Discount']*OptionDetails['Cost'])|number_format}}{% else %}{{OptionDetails['Cost']|number_format}}{% endif %}  Coins</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table id="RestDetails">
+                        <tr>
+                            <td>
+                                <table class="RestTableDetails">
+                                    <tr>
+                                        <td>Damage:</td>
+                                        <td>{{ItemDetails['Damage']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delay:</td>
+                                        <td>{{ItemDetails['Delay']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Magazine:</td>
+                                        <td>{{ItemDetails['Magazine']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Max Bullet:</td>
+                                        <td>{{ItemDetails['MaxBullet']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Control:</td>
+                                        <td>{{ItemDetails['Control']}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table class="RestTableDetails">
+                                    <tr>
+                                        <td>HP:</td>
+                                        <td>{{ItemDetails['HP']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AP:</td>
+                                        <td>{{ItemDetails['AP']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Max Weight:</td>
+                                        <td>{{ItemDetails['MaxWeight']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reload Time:</td>
+                                        <td>{{ItemDetails['ReloadTime']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Duration:</td>
+                                        <td id="Duration">{{ItemDetails['TimeOptions'][0]['Name']}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table class="RestTableDetails">
+                                    <tr>
+                                        <td>FR:</td>
+                                        <td>{{ItemDetails['FR']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PR:</td>
+                                        <td>{{ItemDetails['PR']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CR:</td>
+                                        <td>{{ItemDetails['CR']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LR:</td>
+                                        <td>{{ItemDetails['LR']}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #33A0F5;font-weight: bold;">BUY NOW</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!--<tr>
+                <td>Time Option:</td>
+                <td>
+                    <select name="TimeOption">
+                    {% for OptionNumber, OptionDetails in ItemDetails['TimeOptions'] %}
+                        <option value="{{OptionNumber}}">{{OptionDetails['Name']}} - {{OptionDetails['Cost']}} Coins</option>
+                    {% endfor %}
+                    </select>
+                </td>
+            </tr>/-->
+            <!--<tr>
+                <td><label for="giftCheckBox">Gift:</label><input type="checkbox" name="giftCheckBox" id="giftCheckBox" /></td>
+                <td><input type="text" name="GiftTo" id="GiftTo" placeholder="Character name" size="20" maxlength="16" /></td>
+            </tr>/-->
+            <tr>
+                <td>
+                
+                <div class="buttons">
+                
+                    <button style="display: none;" type="submit" class="positive" id="SubItem" name="SubItem">
+                        <img src="public/img/apply.png" alt=""/>
+                        PURCHASE
+                    </button>
+                    
+                    
+                    <button style="display: none;" type="button" class="negative" name="SubItem" disabled="disabled">
+                        <img src="public/img/cross.png" alt=""/>
+                        NO COINS
+                    </button>
+                </div>
+                <script type="text/javascript">Coins = {{Coins}};UpdateTimeAndStatus($('#ItemOption[value='+$('#ItemOption').val()+']').text());</script>
+                <!--<input type="submit" name="SubItem" class="ItemButton" value="PURCHES" />--></td>
+                <td style="color: red;">The server is not responsible for your purchases.</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><div id="ItemMessage2">{{ItemMessage}}</div></td>
+            </tr>
+        </table>
+    </form>
+    {% else %}
+    The item does not exist.
+    {% endif %}
+</div>

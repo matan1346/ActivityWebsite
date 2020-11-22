@@ -1,0 +1,68 @@
+{% include 'Layout/header.html' %}
+    <div id="GetBackToRanking"><a href="players">&#60;- Players Ranking</a></div>
+    <div id="playerInfoContainer">
+    {% if player is not empty %}
+        <div id="playerTitle">{{player['Name']['ColorName']|raw}}`s Profile</div>
+        <div id="InfoLeft">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{player['Name']['RegularName']}}</td>
+                </tr>
+                <tr>
+                    <td>Level:</td>
+                    <td>{{player['Level']}}</td>
+                </tr>
+                <tr>
+                    <td>EXP:</td>
+                    <td>{{player['XP']}}</td>
+                </tr>
+                <tr>
+                    <td>Kills:</td>
+                    <td>{{player['KillCount']}}</td>
+                </tr>
+                <tr>
+                    <td>Deaths:</td>
+                    <td>{{player['DeathCount']}}</td>
+                </tr>
+                <tr>
+                    <td>Rate:</td>
+                    <td>{{player['Rating']}}</td>
+                </tr>
+                <tr>
+                    <td>Rank:</td>
+                    <td>{{player['Rank']}}</td>
+                </tr>
+                <tr>
+                    <td>Clan:</td>
+                    <td>
+                        {% if player['ClanName']['RegularName'] != "--" %}
+                            <a class="clan_link" href="{{BASE_CLAN_PROFILE_PATH~player['ClanName']['RegularName']}}">{{player['ClanName']['ColorName']|raw}}</a>
+                        {% else %}    
+                            --
+                        {% endif %}
+                </tr>
+            </table>
+        </div>
+        
+        <div id="InfoRight">
+            <table>
+                <tr>
+                    <td>Created:</td>
+                    <td>{{player['RegDate']}}</td>
+                </tr>
+                <tr>
+                    <td>Last Login:</td>
+                    <td>{{player['LastTime']}}</td>
+                </tr>
+                <tr>
+                    <td>Signature:</td>
+                    <td><a href="{{site_url~BASE_PLAYER_SIGN_PATH~player['Name']['RegularName']}}" target="_blank">{{player['Name']['ColorName']|raw}}`s Signature</a></td>
+                </tr>
+            </table>
+        </div>
+    {% else %}
+        <div id="notExists">The player {{not_exists}} does not exist.</div>
+    {% endif %}
+    </div>
+{% include 'Layout/footer.html' %}

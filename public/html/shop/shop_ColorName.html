@@ -1,0 +1,116 @@
+<div id="ColorNameContainer">
+    {% if CharactersExists == true %}
+    <div id="ColorNameForm">
+        <h2>Color Name</h2>
+        <form action="shop/{{shop_Type}}" method="POST">
+            <table id="ColorNameTable">
+                <tr>
+                    <td>Character:</td>
+                    <td>
+                        <select name="CharacterSelect" id="CharacterColorSelect">
+                            {% for CharCID,CharName in CharacterSelect %}
+                                <option value="{{CharName['RegularName']}}">{{CharName['RegularName']}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>New Name:</td>
+                    <td><input type="text" name="CharacterC" id="CharacterColor" maxlength="{{MaxLength}}" size="20" value="{{first_character['RegularName']}}" autocomplete="off" /></td>
+                </tr>
+                <tr>
+                    <td>Preview Name:</td>
+                    <td><div id="preview_name"></td>
+                </tr>
+                <tr>
+                    <td>Time Option:</td>
+                    <td><select name="PaySelect" id="TimeSelect">
+                            {% for TimeKey,TimeValue in timeoption %}
+                                <option value="{{TimeKey}}">{{TimeValue}} Coins</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><div id="TotalPrice"><span id="total_price">0</span> Coins</div></td>
+                </tr>
+            </table>
+            <div id="HoldingButtons">
+                <div class="buttons">
+                    <button type="submit" class="positive" name="Sub{{shop_Type}}">
+                        <img src="public/img/apply.png" alt=""/>
+                        Buy Color
+                    </button>
+                </div>
+            </div>
+        </form>
+        <script type="text/javascript">
+        
+            function updatePrice(str)
+            {
+                var i, total;
+                total = 0;
+                
+                for(i=0; i<str.length; i++)
+                {
+                    if(str.charAt(i) == '^' && (i+1)<str.length && str.charAt(i+1) >= '0' && str.charAt(i+1) <= '9')
+                    {
+                        total++;
+                    }
+                }
+                
+                {% for priceType,priceValue in  scriptPrice %}if(document.getElementById("TimeSelect").value == {{priceType}})
+                {    
+                    total = total*{{priceValue}};
+                }
+                
+                {% endfor %}
+                
+                document.getElementById("total_price").innerHTML = ""+total+"";
+            }
+            
+            function updatePreview(str)
+            {
+                var i;
+                var previewStr = "";
+                var closeSpan = "</span>";
+                var $ColorActiveInName = false;
+                
+                for(i=0; i<str.length; i++)
+                {
+                    if(str.charAt(i) == '^' && (i+1)<str.length)
+                    {
+                        switch(str.charAt(i+1))
+                        {
+                            {% for key,color in  colors%}case "{{key}}":
+                                if($ColorActiveInName)
+                                    previewStr += closeSpan;
+                                previewStr += '<span style="color: #{{color}}">';
+                                $ColorActiveInName = true;
+                                break;
+                                
+                            {% endfor %}default:
+                                previewStr += str.charAt(i);
+                                i--;
+                                break;
+                        }
+                        i++;
+                    }
+                    else
+                    {
+                        previewStr += str.charAt(i);
+                    }
+                }
+                if($ColorActiveInName)
+                    previewStr += closeSpan;
+                
+                document.getElementById('preview_name').innerHTML=previewStr;
+            }
+            updatePreview('{{first_character["RegularName"]}}');
+        </script>
+     </div>
+     {% else %}
+        <div id="NoCharacters">You do not have any character.</div>
+     {% endif%}
+</div>

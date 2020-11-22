@@ -1,0 +1,149 @@
+
+
+/*
+//Buttons - Start
+*/
+.buttons a, .buttons button{
+    display:block;
+    float:left;
+    margin:0 7px 0 0;
+    background-color:#f5f5f5;
+    border:1px solid #dedede;
+    border-top:1px solid #eee;
+    border-left:1px solid #eee;
+
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:12px;
+    line-height:130%;
+    text-decoration:none;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+    padding:5px 10px 6px 7px; /* Links */
+}
+.buttons button{
+    width:auto;
+    overflow:visible;
+    padding:4px 10px 3px 7px; /* IE6 */
+}
+.buttons button[type]{
+    padding:5px 10px 5px 7px; /* Firefox */
+    line-height:17px; /* Safari */
+}
+*:first-child+html button[type]{
+    padding:4px 10px 3px 7px; /* IE7 */
+}
+.buttons button img, .buttons a img{
+    margin:0 3px -3px 0 !important;
+    padding:0;
+    border:none;
+    width:16px;
+    height:16px;
+}
+
+/* STANDARD */
+
+button:hover, .buttons a:hover{
+    background-color:#dff4ff;
+    border:1px solid #c2e1ef;
+    color:#336699;
+}
+.buttons a:active{
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+}
+
+/* POSITIVE */
+
+button.positive, .buttons a.positive{
+    color:#529214;
+}
+.buttons a.positive:hover, button.positive:hover{
+    background-color:#E6EFC2;
+    border:1px solid #C6D880;
+    color:#529214;
+}
+.buttons a.positive:active{
+    background-color:#529214;
+    border:1px solid #529214;
+    color:#fff;
+}
+
+/* NEGATIVE */
+
+.buttons a.negative, button.negative{
+    color:#d12f19;
+}
+.buttons a.negative:hover, button.negative:hover{
+    background:#fbe3e4;
+    border:1px solid #fbc2c4;
+    color:#d12f19;
+}
+.buttons a.negative:active{
+    background-color:#d12f19;
+    border:1px solid #d12f19;
+    color:#fff;
+}
+
+/* REGULAR */
+
+button.regular, .buttons a.regular{
+    color:#336699;
+}
+.buttons a.regular:hover, button.regular:hover{
+    background-color:#dff4ff;
+    border:1px solid #c2e1ef;
+    color:#336699;
+}
+.buttons a.regular:active{
+    background-color:#6299c5;
+    border:1px solid #6299c5;
+    color:#fff;
+}
+/*
+//Buttons - End
+*/
+
+/*<div class="buttons">
+    <button type="submit" class="positive" name="save">
+        <img src="images/apply2.png" alt=""/>
+        Save
+    </button>
+
+    <a href="" class="regular"><!-- class="regular"-->
+        <img src="images/textfield_key.png" alt=""/>
+        Change Password
+    </a>
+
+    <a href="#" class="negative">
+        <img src="images/cross.png" alt=""/>
+        Cancel
+    </a>
+</div>*/
+
+.button_type2{
+border:1px solid #616261; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-family:arial, helvetica, sans-serif; padding: 0px 10px 0px 10px; text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; text-align: center; color: #FFFFFF; background-color: #7d7e7d;
+ width: 80px;
+height: 25px;
+border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#7d7e7d), to(#0e0e0e));
+ background-image: -webkit-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: -moz-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: -ms-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: -o-linear-gradient(top, #7d7e7d, #0e0e0e);
+ background-image: linear-gradient(to bottom, #7d7e7d, #0e0e0e);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#7d7e7d, endColorstr=#0e0e0e);
+}
+
+.button_type2:hover{
+ border:1px solid #4a4b4a; background-color: #646464;
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#646464), top(#282828));
+ background-image: -webkit-linear-gradient(top, #646464, #282828);
+ background-image: -moz-linear-gradient(top, #646464, #282828);
+ background-image: -ms-linear-gradient(top, #646464, #282828);
+ background-image: -o-linear-gradient(top, #646464, #282828);
+ background-image: linear-gradient(to bottom, #646464, #282828);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#646464, endColorstr=#282828);
+}
