@@ -10,11 +10,11 @@
 ![Image](./ActivityGunz4.jpg)
 ## Manage Clans - Update Members
 ![Image](./ActivityGunz5.jpg)
-## Home Page
+## Clans Ranking
 ![Image](./ActivityGunz6.jpg)
-## Home Page
+## Clan Profile
 ![Image](./ActivityGunz7.jpg)
-## Home Page
+## Character Profile
 ![Image](./ActivityGunz8.jpg)
 ## Home Page
 ![Image](./ActivityGunz9.jpg)
