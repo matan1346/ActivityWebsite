@@ -14,9 +14,9 @@
 ![Image](./ActivityGunz6.jpg)
 ## Clan Profile
 ![Image](./ActivityGunz7.jpg)
-## Character Profile
+## Shop Menu
 ![Image](./ActivityGunz8.jpg)
-## Home Page
+## Purchase VIP
 ![Image](./ActivityGunz9.jpg)
-## Home Page
+## Purchase Item
 ![Image](./ActivityGunz10.jpg)
