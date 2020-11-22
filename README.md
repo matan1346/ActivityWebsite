@@ -6,9 +6,9 @@
 ![Image](./ActivityGunz2.jpg)
 ## Profile Page
 ![Image](./ActivityGunz3.jpg)
-## Home Page
+## Manage Clans
 ![Image](./ActivityGunz4.jpg)
-## Home Page
+## Manage Clans - Update Members
 ![Image](./ActivityGunz5.jpg)
 ## Home Page
 ![Image](./ActivityGunz6.jpg)
